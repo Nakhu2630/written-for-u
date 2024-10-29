@@ -1,0 +1,234 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #B24C50 0%, #E57373 28.53%, #F5C1C1 75.52%);
+}
+
+.mindmap-container {
+    position: relative;
+    width: 800px;
+    height: 800px;
+}
+
+.center-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.center-circle h1 {
+    font-size: 24px;
+    margin: 0;
+    color: white;
+}
+
+.center-circle p {
+    font-size: 14px;
+    margin: 5px 0 0;
+    color: rgb(167, 72, 72);
+}
+
+.step {
+    position: absolute;
+    background: #E57373;
+    color: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    display: inline-block; /* Memungkinkan container menyesuaikan konten */
+}
+
+.step h2 {
+    font-size: 20px;
+    background-color: #ADD8E6;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+}
+
+.step h3 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.expanded-content {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 200px;
+    background: rgba(223, 71, 71, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-left: 10px;
+}
+
+.expanded-contenta {
+    position: absolute;
+    top: 0;
+    left: -13%;
+    width: 200px;
+    background: rgba(223, 71, 71, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-left: 10px;
+}
+
+.expanded-content1 {
+    position: absolute;
+    top: 0;
+    left: -14%;
+    width: 200px;
+    background: rgba(223, 71, 71, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-left: 10px;
+}
+
+.expanded-content2 {
+    position: absolute;
+    top: 0;
+    left: -16%;
+    width: 200px;
+    background: rgba(223, 71, 71, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-left: 10px;
+}
+
+.sigma {
+    max-width: 30%; /* Membatasi lebar gambar agar sesuai dengan lebar container */
+    height: auto;    /* Menjaga proporsi gambar */
+}
+
+
+.her1 {
+    max-width: 130%;
+    height: auto;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.her2, .her3, .her4, .her5 {
+    max-width: 60%;
+    height: auto;
+}
+
+/* Smooth fade for overlay */
+.overlay img {
+    transition: transform 0.3s ease;
+}
+.overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.overlay[style*="display: flex"] {
+    opacity: 1;
+}
+
+.sigma2 {
+    max-width: 70px;
+    height: auto;
+}
+
+.logo1 {
+    max-width: 70px;
+    height: auto;
+}
+
+/* Default mobile portrait view (narrow screens) */
+@media (max-width: 767px) and (orientation: portrait) {
+    .mindmap-container {
+      width: 100%; /* Full width on mobile */
+      height: auto; /* Height adjusts based on content */
+      padding: 20px;
+    }
+  
+    .center-circle {
+      width: 180px;
+      height: 180px;
+      padding: 15px;
+    }
+  
+    .step {
+      width: 90%;
+      margin: 10px auto;
+      padding: 15px;
+    }
+  
+    /* Any other portrait-specific styles */
+  }
+  
+  /* Landscape mode (when the device is rotated to wide screen) */
+  @media (max-width: 767px) and (orientation: landscape) {
+    /* Make layout wider and potentially adjust spacing */
+    .mindmap-container {
+      width: 90%; /* Allow some margin on the sides */
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 10px;
+    }
+  
+    .center-circle {
+      width: 200px; /* Adjust as needed */
+      height: 200px;
+      padding: 10px;
+    }
+  
+    .step {
+      width: auto; /* Allow natural width based on content */
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+  
+  .this-footer {
+    color: #FBCDA1;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 10;
+}
+
+.h1-footer {
+    font-size: 18px; 
+    color: #87A2FF;
+    background-color: #F5F5F7;
+    padding: 10px 0;
+}
